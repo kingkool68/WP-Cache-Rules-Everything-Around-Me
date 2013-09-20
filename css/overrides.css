@@ -1,0 +1,37 @@
+abbr[title],
+acronym[title] {
+border-bottom: 0.095em dotted #3B759E;
+cursor: help;
+}
+h1 abbr[title],
+h1 acronym[title],
+h2 abbr[title],
+h2 acronym[title] {
+border-bottom:0 none;
+}
+.reveal section img.no-border {
+border:0 none;
+box-shadow:none;
+}
+
+.graph .bar {
+width:42%;
+}
+.graph .bar span {
+display:block;
+height:1em;
+background-color:#3B759E;
+}
+p.tweet-me {
+text-align:center;
+padding-top:1.25em;
+}
+.reveal section .tweet-me img {
+display:block;
+margin:0 auto;
+}
+.reveal p.via {
+font-size:75%;
+font-style:italic;
+padding-top:0.5em;
+}

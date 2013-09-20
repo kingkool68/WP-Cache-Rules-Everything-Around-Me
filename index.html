@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>C.R.E.A.M. - Cache Rules Everything Around Me</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Slides from my WordCamp Baltimore talk about caching">
+		<meta name="author" content="Russell Heimlich">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/overrides.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
@@ -36,316 +37,584 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+				<section data-background="#000000" data-transition="fade">
+					<img src="img/CREAM.png" class="stretch no-border" alt="C.R.E.A.M Cash Rules Everything Around Me">
 				</section>
-
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+				<section data-background="#000000" data-transition="fade">
+					<img src="img/CREAM-fixed.png" class="stretch no-border" alt="C.R.E.A.M Cache Rules Everything Around Me">
 				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+				<section data-background="#000000" data-transition="fade">
+					<img src="img/CREAM-cats.png" class="stretch no-border" alt="C.R.E.A.M Cats Rule Everything Around Me">
 				</section>
-
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
+					<h1>Cache Rules Everything Around Me</h1>
+					<p>presented at</p>
+					<p><a href="http://2013.baltimore.wordcamp.org/" target="_blank">WordCamp Baltimore</a></p>
+					<p><time datetime="2013-09-21">September 21 2013</time></p>
 				</section>
-
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<h2>Hi, I'm Russell Heimlich</h2>
+					<p class="fragment"><em>(Heimlich, like the maneuver)</em></p>
+					<p class="fragment">Head Cache Invalidator at the <a href="http://www.pewresearch.org/" target="_blank" class="roll">Pew Research Center</a></p>
 				</section>
-
 				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
+					<h2>Follow Along</h2>
+					<p><a href="#" target="_blank">Link to Slides Online</a></p>
 				</section>
-
 				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h1>But first a story&hellip;</h1>
+				</section>
+				<section>
+					<p>2006 - 2009 I worked at <a href="http://www.usnews.com" target="_blank">USNews & World Report</a></p>
+					<img src="img/usnews-logo.png">
+				</section>
+				<section>
+					<img src="img/usnews-best-colleges-cover.jpg">
+				</section>
+				<section>
+					<h3>Months of work go in to the release of new rankings.</h3>
+				</section>
+				<section>
+					<h2>On launch day we always see a huge traffic spike</h2>
+					<p class="fragment">But one year we got lucky&hellip;</p>
+				</section>
+				<section>
+					<p>The marketing/biz dev team managed to get us featured on the homepage of a major web portal!</p>
+					<p class="fragment"><br><em>(And by featured I mean the featured story on their homepage)</em></p>
+				</section>
+				<section>
+					<h2>We were going to be featured on&hellip;</h2>
+					<img src="img/yahoo-logo.jpg" alt="Yahoo!" class="fragment">
+					<p class="fragment"><em>(Before their <acronym title="Chief Executive Officer">CEO</acronym> discovered Adobe Illustrator)</em></p>
+				</section>
+				<section>
+					<h2>We Were EXCITED!</h2>
+					<img src="img/champagne-celebration.gif" class="stretch">
+				</section>
+				<section>
+					<p>Ok maybe we looked more like this&hellip;</p>
+					<img src="img/ron-paul-happy.gif" class="stretch">
+				</section>
+				<section>
+					<p>The story went live on Yahoo.com and we watched&hellip;</p>
+					<img src="img/sarah-jessica-parker-popcorn.gif" class="stretch">
+				</section>
+				<section>
+					<p>The servers started getting slower&hellip;</p>
+					<img src="img/cookie-monster-waiting.gif" class="stretch">
+				</section>
+				<section>
+					<p>Editors were calling us saying they couldn't get in to the admin area&hellip;</p>
+					<img src="img/bad-phone-call.gif" class="stretch">
+				</section>
+				<section>
+					<p>Our servers were completely down&hellip;</p>
+					<img src="img/baby-punch.gif" class="stretch">
+				</section>
+				<section>
+					<p>We had to call Yahoo! and have them remove the story because we couldn't handle the traffic&hellip;</p>
+					<img src="img/50-cent-disappointed.gif" class="stretch">
+				</section>
+				<section>
+					<h2>We lasted 15 minutes.</h2>
+					<img src="img/group-face-palm.gif" class="stretch">
+				</section>
+				<section>
+					<h2>Performance and uptime are important!</h2>
+					<p class="fragment">And caching can help.</p>
+				</section>
+				<section>
+					<p>P.S. Don't feel bad for USNews</p>
+					<a href="https://twitter.com/BKellyUSN/status/378146550318243840" target="_blank"><img src="img/usnews-tweet.png" class="stretch"></a>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</section>
+				<section>
+					<h1>What is caching?</h1>
+				</section>
+				<section>
+					<h2>Cache</h2>
+					<blockquote cite="http://en.wikipedia.org/wiki/Cache_(computing)"><p>&ldquo;a component that transparently stores data so that future requests for that data can be served faster.&rdquo;</p></blockquote>
+					<p class="via">&mdash; via <a href="http://en.wikipedia.org/wiki/Cache_(computing)" target="_blank">Wikipedia, Cache (Computing)</a></p>
+				</section>
+				<section>
+					<p>A cache may contain values computed earlier or duplicate values stored elsewhere.</p>
+				</section>
+				<section>
+					<p>A <strong>cache hit</strong> can complete the request by reading the value from the cache.</p>
+				</section>
+				<section>
+					<p>A <strong>cache miss</strong> has to be recomputed or fetched from another location which is much slower.</p>
+				</section>
+				<section>
+					<p>The more requests that can be served from a cache, the faster the system performs.</p>
+					<p class="fragment"><br>
+The faster the system, the more requests it can handle.</p>
+				</section>
+				<section>
+					<h2>A Real-World Example</h2>
+					<p class="fragment">You're taking 5 classes and need to write 5 essays&hellip;</p>
+				</section>
+				<section>
+					<p>You could write 5 separate essays</p>
+					<h2 class="fragment">OR</h2>
+					<p class="fragment">You could write one essay and use it for all of your classes</p>
+				</section>
+				<section>
+					<h2>That's caching!</h2>
+					<img src="img/smart-kid.gif" class="stretch">
+				</section>
+				<section>
+					<p>There are many (potential) layers of caching involved in a single web request.</p>
+					<img src="img/burger-stack.jpg" class="stretch">
+				</section>
+				<section>
+					<h1>How does a request work?</h1>
+				</section>
+				<section data-transition="fade">
+					<h2>A Basic Request</h2>
+					<img src="img/web-request.png" class="stretch no-border">
+				</section>
+				<section data-transition="fade">
+					<h2>A Basic Request</h2>
+					<img src="img/web-serve.png" class="stretch no-border">
+				</section>
+				<section>
+					<h1>PHP Pages Take Longer to Serve</h1>
+				</section>
+				<section data-transition="fade">
+					<h2>A PHP Page Request</h2>
+					<img src="img/php-request.png" class="stretch no-border">
+				</section>
+				<section data-transition="fade">
+					<h2>A PHP Page Request</h2>
+					<img src="img/php-serve.png" class="stretch no-border">
+				</section>
+				<section>
+					<h1>A PHP Page with MySQL Data Takes Even More Work</h1>
+				</section>
+				<section data-transition="fade">
+					<h2>A PHP/MySQL Page Request</h2>
+					<img src="img/mysql-request.png" class="stretch no-border">
+				</section>
+				<section data-transition="fade">
+					<h2>A PHP/MySQL Page Request</h2>
+					<img src="img/mysql-serve.png" class="stretch no-border">
+				</section>
+				<section>
+					<h2>We want to minimize the amount of work done by our server, PHP and MySQL</h2>
+				</section>
+				<section>
+					<h1>HTTP Headers</h1>
+				</section>
+				<section>
+					<blockquote>
+					&ldquo;The easiest request to serve is the one never sent at all.&rdquo;
+					</blockquote>
+					<p class="fragment"><br>I just made this quote up.</p>
+				</section>
+				<section>
+					<p>Your logo image isn't going to change when going from your homepage to a single blog post&hellip;</p>
+					<p class="fragment">So why make the browser even request it?</p>
+				</section>
+				<section>
+					<h2>Far Future Expires Header</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>Tell the browser how long the copy of the file is valid</li>
+						<li>Cached files that are valid are not re-downloaded from the server</li>
+					</ul>
+					<img src="img/304-not-modified.png">
+				</section>
+				<section>
+					<h2>What does that look like?</h2>
+					<p>Add this to your <a href="http://randomtype.ca/blog/the-wordpress-htaccess-file-explained/" target="_blank">.htaccess</a> file:</p>
+					<pre><code>
+<IfModule mod_expires.c>
+
+    ExpiresActive on
+    ExpiresDefault            "access plus 1 month"
+
+    ExpiresByType image/gif   "access plus 1 month"
+    ExpiresByType image/jpeg  "access plus 1 month"
+    ExpiresByType image/png   "access plus 1 month"
+
+</IfModule>	
+					</code></pre>
+				</section>
+				<section>
+				<p>The <acronym title="Hypertext Markup Language">HTML</acronym>5 Boiler Plate project's .htaccess file</p>
+				<ul>
+					<li><a href="https://github.com/h5bp/server-configs-apache/tree/master/doc" target="_blank">Read the docs</a></li>
+					<li><a href="https://github.com/h5bp/html5-boilerplate/blob/master/.htaccess" target="_blank">View the source</a></li>
+				</ul>
+				
+				<a href="https://github.com/h5bp/html5-boilerplate/blob/master/.htaccess" target="_blank"><img src="img/h5bp-htaccess.png"></a>
+				
+				</section>
+				<section>
+					<h2>But what if the image/JS/<acronym title="Cascading Style Sheets">CSS</acronym> file changes?</h2>
+					<p>The browser will keep loading the resource from it's local cache</p>
+				</section>
+				<section>
+					<p>And then you have to clear the browser cache or hard refresh the page (Shift + Refresh).</p>
+					<img src="img/i-dont-get-it.gif" class="stretch">
+>				</section>
+				<section>
+					<h2>We need cache-busting filenames!</h2>
+					<p>WordPress' <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script" target="_blank">wp_enqeue_script()</a> and <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style" target="_blank">wp_enqueue_style()</a> supports this</p>
+					<pre><code class="php">				
+wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
+wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+					</code></pre>
+					<p>which outputs a script like this</p>
+					<pre><code class="no-highlight">
+my-super-neato-script.js?ver=3.6.1
+my-trendy-styles.css?ver=3.6.1
+					</code></pre>
+				</section>
+				<section>
+					<p>But then every time you update your JavaScript or <acronym title="Cascading Style Sheets">CSS</acronym> you need to change the <code>$ver</code> variable to bust the cache&hellip;</p>
+					<img src="img/aint-nobody-got-time-fo-dat.jpg" class="stretch fragment">
+				</section>
+				<section>
+					<h2>So I Wrote a plugin</h2>
+					<p><a href="http://forrst.com/posts/CDN_Friendly_CSS_and_JS_URLs_in_WordPress-IZn" target="_blank"><acronym title="Content Delivery Network">CDN</acronym> Friendly <acronym title="Cascading Style Sheets">CSS</acronym> and JS URLs in WordPress</a></p>
+					<pre><code class="no-highlight">
+/theme/css/2013-09-12_5:21/my-style.css
+					</code></pre>
+					<p>maps to</p>
+					<pre><code class="no-highlight">
+/theme/css/my-style.css
+					</code></pre>
+				</section>
+				<section>
+					<h1><acronym title="Content Delivery Network">CDN</acronym>s</h1>
+				</section>
+				<section>
+					<h2>Content Delivery Networks (CDNs)</h2>
+					<p>Set of servers in multiple data centers around the world to serve content with high availability and performance.</p>
+					<img src="img/cdn-diagram.png" class="stretch no-border">
+				</section>
+				<section data-transition="fade">
+					<p><acronym title="Content Delivery Network">CDN</acronym>s serve their copy of a file, if available, sparing your server from the traffic.</p>
+					<img src="img/cdn-servers.png" class="stretch no-border">
+				</section>
+				<section data-transition="fade">
+					<p>If the <acronym title="Content Delivery Network">CDN</acronym> doesn't have a copy of the file, it passes the request back to the origin.</p>
+					<img src="img/cdn-origin.png" class="stretch no-border">
+				</section>
+				<section>
+					<h2>Two Types of <acronym title="Content Delivery Network">CDN</acronym>s</h2>
+					<ol>
+						<li class="fragment">Push - assets get uploaded to the <acronym title="Content Delivery Network">CDN</acronym> manually, you link directly to it</li>
+						<li class="fragment">Pull - The <acronym title="Content Delivery Network">CDN</acronym> is a proxy saving requests that are passed through it</li>
+					</ol>
+					<p class="fragment via">See <a href="http://www.whoishostingthis.com/blog/2010/06/30/cdns-push-vs-pull/" target="_blank">Push vs. Pull <acronym title="Content Delivery Network">CDN</acronym>s</a></p>
+				</section>
+				<section data-transition="fade">
+					<h2>DNS Changes Needed For Pull <acronym title="Content Delivery Network">CDN</acronym>s</h2>
+					<img src="img/cdn-servers.png" class="stretch no-border">
+					<p>cdn.example.com masks ugly <acronym title="Content Delivery Network">CDN</acronym> URL (CNAME)</p>
+				</section>
+				<section data-transition="fade">
+					<h2>DNS Changes Needed For Pull <acronym title="Content Delivery Network">CDN</acronym>s</h2>
+					<img src="img/cdn-origin.png" class="stretch no-border">
+					<p>example.com points to origin <acronym title="Internet Protocol">IP</acronym> Address (A Record)</p>
+				</section>
+				<section>
+					<p>The <acronym title="Content Delivery Network">CDN</acronym> uses the Expires header to determine if cached asset is stale or not.</p>
+					<p>Stale requests get passed to the origin server</p>
+				</section>
+				<section>
+					<p>Some <acronym title="Content Delivery Network">CDN</acronym>s and proxies <a href="http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/" target="_blank">don't cache URLs with a query string</a>. So avoid it if you can.</p>
+					<pre><code class="no-highlight">
+BAD
+http://www.example.com/js/file.js?2013-09-12
+
+GOOD
+http://www.example.com/js/2013-09-12/file.js
+http://www.example.com/js/file.2013-09-12.js
+					</code></pre>
+				</section>
+				<section>
+					<p>If you cache your <acronym title="Hypertext Markup Language">HTML</acronym> via a <acronym title="Content Delivery Network">CDN</acronym> then if your origin server goes down your site will still be served. Visitors won't even know.</p>
+					<img src="img/whatever.gif" class="stretch">
+				</section>
+				<section>
+					<p>Distributing content across the world, visitors will download from a server closer to them.</p>
+					<img src="img/cdn-distribution-map.png">
+				</section>
+				<section>
+					<h2><acronym title="Content Delivery Network">CDN</acronym> Providers</h2>
+					<ul>
+						<li><a href="http://www.akamai.com/" target="_blank">Akamai</a></li>
+						<li><a href="http://www.edgecast.com/" target="_blank">EdgeCast</a></li>
+						<li><a href="http://aws.amazon.com/cloudfront/" target="_blank">Amazon Cloudfront</a></li>
+						<li><a href="http://www.maxcdn.com/" target="_blank">MaxCDN</a></li>
+						<li><a href="https://www.cloudflare.com" target="_blank">CloudFlare</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Full Page Caching</h1>
+				</section>
+				<section>
+					<p>Full page caching takes the result of a page request from WordPress and saves it as a static <acronym title="Hypertext Markup Language">HTML</acronym> file that will be served up the next time.</p>
+				</section>
+				<section>
+					<h2>Caching Plugins</h2>
+					<ul>
+						<li><a href="http://wordpress.org/plugins/w3-total-cache/" target="_blank">W3 Total Cache</a> <span class="fragment">(Advandced, lots of options)</span></li>
+						<li><a href="http://wordpress.org/plugins/wp-super-cache/" target="_blank">WP Super Cache</a> <span class="fragment">(Easier set-up)</span></li>
+						<li><a href="http://wordpress.org/plugins/batcache/" target="_blank">Batcache</a> <span class="fragment">(Multi-server environment)</span></li>
+						<li><a href="http://wordpress.org/plugins/hyper-cache/" target="_blank">Hyper Cache</a> <span class="fragment">(For low-resource hosts)</span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Caching Plugin Tips</h2>
+					<ul>
+						<li class="fragment">Don't cache pages for logged in users</li>
+						<li class="fragment">Don't cache POST requests</li>
+						<li class="fragment">Do serve cached files from mod_rewrite (not PHP)</li>
+						<li class="fragment">Don't serve a separate mobile version (use responsive design)</li>
+						<li class="fragment">Make sure it is working!</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<h1>PHP Caching</h1>
 				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon.css#/themes">Moon</a> -
-						<a href="?theme=simple.css#/themes">Simple</a> -
-						<a href="?theme=solarized.css#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
+					<h2>WordPress' Caching APIs</h2>
+					<ul>
+						<li>Transients API</li>
+						<li>WP Object Cache</li>
+					</ul>
 				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
 				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
+					<h2>Transients API</h2>
+					<ul>
+						<li>Used to store data that can expire at any time</li>
+						<li>Has an expiration to invalidate the data</li>
+						<li>Uses the wp_options table or an object cache</li>
+					</ul>
+					<p class="via">See <a href="http://codex.wordpress.org/Transients_API" target="_blank">http://codex.wordpress.org/Transients_API</a></p>
 				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
 				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
+					<h2>Transients API Functions</h2>
+					<ul>
+						<li><a href="http://codex.wordpress.org/Function_Reference/set_transient" target="_blank">set_transient()</a></li>
+						<li><a href="http://codex.wordpress.org/Function_Reference/get_transient" target="_blank">get_transient()</a></li>
+						<li><a href="http://codex.wordpress.org/Function_Reference/delete_transient" target="_blank">delete_transient()</a></li>
+					</ul>
 				</section>
-
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
+					<h2>Multisite Transients API Functions</h2>
+					<ul>
+						<li><a href="http://codex.wordpress.org/Function_Reference/set_site_transient" target="_blank">set_site_transient()</a></li>
+						<li><a href="http://codex.wordpress.org/Function_Reference/get_site_transient" target="_blank">get_site_transient()</a></li>
+						<li><a href="http://codex.wordpress.org/Function_Reference/delete_site_transient" target="_blank">delete_site_transient()</a></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Transients Example</h2>
+					<pre><code class="php">
+$my_transient = get_transient( 'my_transient' );
+if( $my_transient == false ) {
+  
+  //Do some complicated task worth caching
+  $my_transient = 'Something complicated';
+  
+  set_transient( 'my_transient', $my_transient, 12 * HOUR_IN_SECONDS );
 }
 					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
 				</section>
-
 				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section>
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-				<section>
-					<h2>Stellar Links</h2>
+					<h2>Transients API Is Ideal For&hellip;</h2>
 					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+						<li class="fragment">Fetching RSS feeds</li>
+						<li class="fragment">Storing an external API call</li>
+						<li class="fragment">Caching a complex query</li>
+						<li class="fragment">ANYTHING that needs to expire at some time</li>
 					</ul>
 				</section>
-
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h2>Time Constants</h2>
+					<p>As of WordPress 3.5 several constants were introduced to easily express time</p>
+					<pre><code class="php">
+MINUTE_IN_SECONDS  = 60 (seconds)
+HOUR_IN_SECONDS    = 60 * MINUTE_IN_SECONDS
+DAY_IN_SECONDS     = 24 * HOUR_IN_SECONDS
+WEEK_IN_SECONDS    = 7 * DAY_IN_SECONDS
+YEAR_IN_SECONDS    = 365 * DAY_IN_SECONDS
+					</code></pre>
 				</section>
-
+				<section>
+					<h2>WP Object Cache</h2>
+					<p>WordPress' internal class for caching data.</p>
+					<p class="via">See <a href="http://codex.wordpress.org/Class_Reference/WP_Object_Cache" target="_blank">http://codex.wordpress.org/Class_Reference/WP_Object_Cache</a></p>
+				</section>
+				<section>
+					<h2>Caching Persistance</h2>
+					<p>WP_Object_Cache data isn't saved between page requests by default.</p>
+					<p>If an object cache is available, WP_Object_Cache will use that instead</p>
+				</section>
+				<section>
+					<h2>wp_cache Functions</h2>
+					<p>Don't call WP_Object_Cache Class directly!</p>
+					<pre><code class="php">
+wp_cache_add( $key, $data, $group, $expire );
+wp_cache_set( $key, $data, $group, $expire );
+wp_cache_get( $key, $group = '', $force = false, $found = null );
+wp_cache_delete( $key, $group );
+wp_cache_replace( $key, $data, $group, $expire )
+					</code></pre>
+				</section>
+				<section>
+					<h2>When Should We Use This?</h2>
+				</section>
+				
+				<section>
+					<h1>Object Caching</h1>
+				</section>
+				<section>
+					<h2>What is Object Caching?</h2>
+					<blockquote>Distributed, in-memory key-value store for small chunks of data.</blockquote>
+					<ul>
+						<li><a href="http://memcached.org/" target="_blank">Memcached</a></li>
+						<li><a href="http://redis.io/" target="_blank">Redis</a></li>
+						<li><a href="http://php.net/manual/en/book.apc.php" target="_blank"><acronym title="Alternative PHP Cache">APC</acronym></a> (not distributed)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Uh&hellip; in English?</h2>
+					<ul>
+						<li class="fragment">Store Transients API and WP Object Cache items in memory between requests</li>
+						<li class="fragment">Make it available to multiple servers</li>
+						<li class="fragment"><acronym title="Random Access Memory">RAM</acronym> is way faster than disk!</li>
+					</ul>
+				</section>
+				<section>
+					<h2>How Do I Enable Objet Caching?</h2>
+					<ol>
+						<li>Download and install <a href="http://memcached.org/" target="_blank">Memcached</a> or <a href="http://redis.io/" target="_blank">Redis</a> or <a href="http://php.net/manual/en/book.apc.php" target="_blank"><acronym title="Alternative PHP Cache">APC</acronym></a> on your server</li>
+						<li>Add the appropriate <code>object-cache.php</code> file to your wp-content folder</li>
+					</ol>
+					<div class="fragment">
+						<p>See:</p>
+						<ul>
+							<li><a href="http://wordpress.org/plugins/memcached/" target="_blank">Memcached Object Cache Plugin</a> or</li>
+							<li><a href="https://github.com/ericmann/wordpress-redis-backend" target="_blank">WordPress Redis Backend</a> or</li>
+							<li><a href="http://wordpress.org/plugins/apc/" target="_blank"><acronym title="Alternative PHP Cache">APC</acronym> Object Cache Backend</a></li>
+						</ul>
+					</div>
+				</section>
+				
+				
+				<section>
+					<h1>Opcode Caching</h1>
+				</section>
+				<section>
+					<h2>What does Opcode Caching do?</h2>
+					<ul>
+						<li class="fragment">PHP is written in a human-readable syntax</li>
+						<li class="fragment">When run, PHP is compiled to opcode that a computer understands</li>
+						<li class="fragment">An opcode cache speeds up the execution of PHP</li>
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<img src="img/php-opcode-1.jpg" class="stretch">
+					<p class="via">See <a href="http://www.slideshare.net/josephscott/scaling-wordpress-20731197" target="_blank">Scaling WordPress</a></p>
+				</section>
+				<section data-transition="fade">
+					<img src="img/php-opcode-2.jpg" class="stretch">
+					<p class="via">See <a href="http://www.slideshare.net/josephscott/scaling-wordpress-20731197" target="_blank">Scaling WordPress</a></p>
+				</section>
+				<section>
+					<h2>Opcode Caches</h2>
+					<ul>
+						<li><a href="http://php.net/manual/en/book.apc.php" target="_blank">Alternative PHP Cache (APC)</a></li>
+						<li><a href="https://github.com/eaccelerator/eaccelerator" target="_blank">eAccelerator</a></li>
+						<li><a href="http://xcache.lighttpd.net/" target="_blank">XCache</a></li>
+						<li><a href="https://github.com/zendtech/ZendOptimizerPlus" target="_blank">Zend Optimizer+</a></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Which Opcode Cache to Use?</h2>
+					<p>Zend Optimizer+ will be bundled with PHP 5.5</p>
+					<p class="via">See <a href="http://halfelf.org/2013/trading-apc-for-zend/" target="_blank">http://halfelf.org/2013/trading-apc-for-zend/</a></p>
+				</section>
+				<section>
+					<h2>Benchmarks</h2>
+					<table class="graph">
+						<tr>
+							<td>PHP (No Opcode Cache)</td>
+							<td class="bar"><span style="width:12%">&nbsp;</span></td>
+							<td>~40</td>
+						</tr>
+						<tr>
+							<td><acronym title="Alternative PHP Cache">APC</acronym></td>
+							<td class="bar"><span style="width:80%">&nbsp;</span></td>
+							<td>~260</td>
+						</tr>
+						<tr>
+							<td>Zend Optimizer +</td>
+							<td class="bar"><span style="width:94%">&nbsp;</span></td>
+							<td>~307</td>
+						</tr>
+						</tbody>
+					</table>
+					<small>Number of Requests per second</small>
+					<p class="via">See <a href="http://www.ricardclau.com/2013/03/apc-vs-zend-optimizer-benchmarks-with-symfony2/" target="_blank">http://www.ricardclau.com/2013/03/apc-vs-zend-optimizer-benchmarks-with-symfony2/</a></p>
+				</section>
+				
+				<section>
+					<h1>MYSQL Caching</h1>
+				</section>
+				<section>
+					<h2>MySQL's Query Cache</h2>
+					<ul>
+						<li>Cache's result for frequently used <code>SELECT</code> statements</li>
+						<li>Any <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code> statement flushes the query cache</li>
+					</ul>
+					<p class="via">See <a href="http://dev.mysql.com/doc/refman/5.5/en/query-cache.html" target="_blank">MySQL Query Cache Documentation</a></p>
+				</section>
+				
+				<section>
+					<h1>To Summarize</h1>
+				</section>
+				<section>
+					<ul>
+						<li class="fragment">Leverage browser caching via <acronym title="Hyper Text Transfer Protocol">HTTP</acronym> headers</li>
+						<li class="fragment">Use a <acronym title="Content Delivery Network">CDN</acronym> if you can or a full-page caching plugin</li>
+						<li class="fragment">WordPress' caching <acronym title="Application Programming Interface">API</acronym>s are helpful</li>
+						<li class="fragment">Set-up object caching on your server</li>
+						<li class="fragment">Utilize an opcode cache to speed up PHP</li>
+						<li class="fragment">Make sure MySQL's <code>query_cache</code> is turned on</li>
+					</ul>
+				</section>
+				<section>
+					<h2>More Reading</h2>
+					<ol>
+						<li><a href="http://tollmanz.com/core-caching-concepts-in-wordpress/" target="_blank">Core Caching Concepts in WordPress</a> by Zack Tollman</li>
+						<li><a href="https://josephscott.org/archives/2013/05/scaling-wordpress/" target="_blank">Scaling WordPress</a> by Joseph Scott</li>
+						<li><a href="http://css-tricks.com/wordpress-fragment-caching-revisited/" target="_blank">WordPress Fragment Caching Revisited</a> by Ryan Burnette</li>
+						<li><a href="http://vip.wordpress.com/documentation/caching/" target="_blank">Caching</a> by WordPress.com VIP</li>
+						<li><a href="http://www.thinkoomph.com/thinking/2012-02/caching-scaling-and-wordpress-com-vip/" target="_blank">Caching, Scaling, and What I've Learned Programming for WordPress.com VIP</a> by Erick Hitter</li>
+						<li><a href="http://scotty-t.com/2012/01/20/wordpress-memcached/" target="_blank">WordPress + Memcached</a> by Scott Taylor</li>
+					</ol>
+				</section>
+				<section>
+					<h1>In Conclusion</h1>
+				</section>
+				<section data-background="#000000" data-transition="fade">
+					<img src="img/CREAM-fixed.png" class="stretch no-border" alt="C.R.E.A.M Cache Rules Everything Around Me">
+				</section>
+				<section data-background="#FBEBAD" data-transition="fade">
+					<img src="img/dolla-dolla-bill-yall.jpg" class="stretch no-border" alt="Dolla Dolla Bill, Yall.">
+				</section>
+				<section data-transition="fade">
+					<h1>Thank You!</h1>
+					<p class="tweet-me"><a href="https://twitter.com/kingkool68" target="_blank"><img src="img/twitter-logo.png" class="no-border" alt="Tweet me!"> @kingkool68</a></p>
+				</section>
 			</div>
 
 		</div>
@@ -363,7 +632,7 @@ function linkify( selector ) {
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Optional libraries used to extend on reveal.js
