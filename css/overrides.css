@@ -35,3 +35,7 @@ font-size:75%;
 font-style:italic;
 padding-top:0.5em;
 }
+
+body.print-pdf img.stretch {
+max-width:75%;
+}
